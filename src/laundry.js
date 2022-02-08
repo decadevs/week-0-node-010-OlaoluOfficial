@@ -10,8 +10,8 @@
 function getMaxPairs(noOfWashes, cleanPile, dirtyPile) {
   let cleanPairsToBeTaken = 0;
 
-  cleanBag = cleanPile.sort();
-  singleClean = [];
+  let cleanBag = cleanPile.sort();
+  let singleClean = [];
 
   // sort the clean pile for pairs
 
@@ -38,7 +38,7 @@ function getMaxPairs(noOfWashes, cleanPile, dirtyPile) {
   }
 
   // sort the dirty pile for pairs as much as possible
-  while (dirtyPile.sort().length > 0 && noOfWashes > 0) {
+  while (dirtyPile.length > 0 && noOfWashes > 0) {
     if (dirtyPile[0] === dirtyPile[1] && noOfWashes > 0) {
       dirtyPile.splice(0, 2);
       noOfWashes -= 2;
